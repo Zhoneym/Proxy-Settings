@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Proxy Settings",
+    "version": "1.0",
+    "description": "Set HTTP/HTTPS/SOCKS5 proxy with custom rules.",
+    "permissions": ["proxy", "storage", "tabs"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Proxy Settings",
+      "default_icon": "icon.png"
+    },
+    "icons": {
+      "48": "icon.png"
+    }
+  }
+  

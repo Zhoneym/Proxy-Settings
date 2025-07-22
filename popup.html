@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Proxy Settings 🌐</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    width: 420px;
+    color: #222;
+  }
+  label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+  }
+  select, input {
+    width: 100%;
+    padding: 6px;
+    margin-top: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  button:hover {
+    background-color: #2980b9;
+  }
+  .add-btn {
+    margin-bottom: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 18px;
+  }
+  td {
+    padding: 6px;
+    vertical-align: middle;
+  }
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 8px;
+  }
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+</style>
+</head>
+<body>
+
+<h2 data-i18n="title">🌐 Proxy Settings 🔧</h2>
+
+<label for="language" data-i18n="language_label">🌏 Language</label>
+<select id="language">
+  <option value="en">English 🇺🇸</option>
+  <option value="zh_CN">简体中文 🇨🇳</option>
+  <option value="zh_TW">繁體中文 🇹🇼</option>
+  <option value="ja">日本語 🇯🇵</option>
+  <option value="fr">Français 🇫🇷</option>
+  <option value="ar">العربية 🇸🇦</option>
+</select>
+
+<label for="mode" data-i18n="mode_label">⚙️ Mode</label>
+<select id="mode">
+  <option value="proxy_all" data-i18n="mode_proxy_all">🌍 Global Proxy</option>
+  <option value="direct_all" data-i18n="mode_direct_all">🚫 Global Direct</option>
+  <option value="rules" data-i18n="mode_rules">📜 Rules</option>
+</select>
+
+<label for="proxyType" data-i18n="proxy_type_label">🛡️ Proxy Type</label>
+<select id="proxyType">
+  <option value="http">HTTP</option>
+  <option value="https">HTTPS</option>
+  <option value="socks5">SOCKS5</option>
+</select>
+
+<label for="proxyHost" data-i18n="proxy_host_label">🖥️ Proxy Host</label>
+<input type="text" id="proxyHost" data-i18n-placeholder="proxy_host_placeholder" placeholder="Proxy Host (e.g., 1.2.3.4)" />
+
+<label for="proxyPort" data-i18n="proxy_port_label">🔢 Proxy Port</label>
+<input type="number" id="proxyPort" data-i18n-placeholder="proxy_port_placeholder" placeholder="Proxy Port (e.g., 8080)" />
+
+<div class="section">
+  <label data-i18n="proxy_list_label">🔗 Proxy List</label>
+  <button id="addProxyBtn" class="add-btn" type="button" data-i18n="add_proxy_rule">➕ Add Proxy Rule</button>
+  <table id="proxyTable"><tbody></tbody></table>
+</div>
+
+<div class="section">
+  <label data-i18n="direct_list_label">🔓 Direct List</label>
+  <button id="addDirectBtn" class="add-btn" type="button" data-i18n="add_direct_rule">➕ Add Direct Rule</button>
+  <table id="directTable"><tbody></tbody></table>
+</div>
+
+<button id="applyBtn" type="button" data-i18n="apply">🚀 Apply</button>
+
+<script src="popup.js"></script>
+
+</body>
+</html>
