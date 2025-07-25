@@ -1,138 +1,151 @@
 // Localization dictionary with emojis and Arabic added
 const locales = {
-    en: {
-      title: "🌐 Proxy Settings 🔧",
-      language_label: "🌏 Language",
-      mode_label: "⚙️ Mode",
-      mode_proxy_all: "🌍 Global Proxy",
-      mode_direct_all: "🚫 Global Direct",
-      mode_rules: "📜 Rules",
-      proxy_host_label: "🖥️ Proxy Host",
-      proxy_host_placeholder: "Proxy Host (e.g., 1.2.3.4)",
-      proxy_port_label: "🔢 Proxy Port",
-      proxy_port_placeholder: "Proxy Port (e.g., 8080)",
-      proxy_type_label: "🛡️ Proxy Type",
-      proxy_list_label: "🔗 Proxy List",
-      proxy_list_placeholder: "Use proxy for these domains",
-      direct_list_label: "🔓 Direct List",
-      direct_list_placeholder: "Direct connect for these domains",
-      apply: "🚀 Apply",
-      applied: "✅ Proxy settings applied.",
-      add_proxy_rule: "➕ Add Proxy Rule",
-      add_direct_rule: "➕ Add Direct Rule",
-      delete: "❌ Delete"
-    },
-    zh_CN: {
-      title: "🌐 代理设置 🔧",
-      language_label: "🌏 语言",
-      mode_label: "⚙️ 模式",
-      mode_proxy_all: "🌍 全局代理",
-      mode_direct_all: "🚫 全局直连",
-      mode_rules: "📜 规则模式",
-      proxy_host_label: "🖥️ 代理地址",
-      proxy_host_placeholder: "代理地址 (例如 1.2.3.4)",
-      proxy_port_label: "🔢 代理端口",
-      proxy_port_placeholder: "代理端口 (例如 8080)",
-      proxy_type_label: "🛡️ 代理类型",
-      proxy_list_label: "🔗 代理列表",
-      proxy_list_placeholder: "对这些域名使用代理",
-      direct_list_label: "🔓 直连列表",
-      direct_list_placeholder: "对这些域名直连",
-      apply: "🚀 应用",
-      applied: "✅ 代理设置已生效。",
-      add_proxy_rule: "➕ 添加代理规则",
-      add_direct_rule: "➕ 添加直连规则",
-      delete: "❌ 删除"
-    },
-    zh_TW: {
-      title: "🌐 代理設定 🔧",
-      language_label: "🌏 語言",
-      mode_label: "⚙️ 模式",
-      mode_proxy_all: "🌍 全域代理",
-      mode_direct_all: "🚫 全域直連",
-      mode_rules: "📜 規則模式",
-      proxy_host_label: "🖥️ 代理位址",
-      proxy_host_placeholder: "代理位址 (例如 1.2.3.4)",
-      proxy_port_label: "🔢 代理埠號",
-      proxy_port_placeholder: "代理埠號 (例如 8080)",
-      proxy_type_label: "🛡️ 代理類型",
-      proxy_list_label: "🔗 代理列表",
-      proxy_list_placeholder: "對這些域名使用代理",
-      direct_list_label: "🔓 直連列表",
-      direct_list_placeholder: "對這些域名直連",
-      apply: "🚀 套用",
-      applied: "✅ 代理設定已生效。",
-      add_proxy_rule: "➕ 新增代理規則",
-      add_direct_rule: "➕ 新增直連規則",
-      delete: "❌ 刪除"
-    },
-    ja: {
-      title: "🌐 プロキシ設定 🔧",
-      language_label: "🌏 言語",
-      mode_label: "⚙️ モード",
-      mode_proxy_all: "🌍 全体プロキシ",
-      mode_direct_all: "🚫 全体直通",
-      mode_rules: "📜 ルールモード",
-      proxy_host_label: "🖥️ プロキシホスト",
-      proxy_host_placeholder: "プロキシホスト (例: 1.2.3.4)",
-      proxy_port_label: "🔢 プロキシポート",
-      proxy_port_placeholder: "プロキシポート (例: 8080)",
-      proxy_type_label: "🛡️ プロキシタイプ",
-      proxy_list_label: "🔗 プロキシリスト",
-      proxy_list_placeholder: "これらのドメインにプロキシを使用",
-      direct_list_label: "🔓 直接接続リスト",
-      direct_list_placeholder: "これらのドメインに直接接続",
-      apply: "🚀 適用",
-      applied: "✅ プロキシ設定を適用しました。",
-      add_proxy_rule: "➕ プロキシルールを追加",
-      add_direct_rule: "➕ 直接接続ルールを追加",
-      delete: "❌ 削除"
-    },
-    fr: {
-      title: "🌐 Paramètres Proxy 🔧",
-      language_label: "🌏 Langue",
-      mode_label: "⚙️ Mode",
-      mode_proxy_all: "🌍 Proxy Global",
-      mode_direct_all: "🚫 Connexion Directe Globale",
-      mode_rules: "📜 Règles",
-      proxy_host_label: "🖥️ Hôte Proxy",
-      proxy_host_placeholder: "Hôte Proxy (ex: 1.2.3.4)",
-      proxy_port_label: "🔢 Port Proxy",
-      proxy_port_placeholder: "Port Proxy (ex: 8080)",
-      proxy_type_label: "🛡️ Type de Proxy",
-      proxy_list_label: "🔗 Liste Proxy",
-      proxy_list_placeholder: "Utiliser proxy pour ces domaines",
-      direct_list_label: "🔓 Liste Directe",
-      direct_list_placeholder: "Connexion directe pour ces domaines",
-      apply: "🚀 Appliquer",
-      applied: "✅ Paramètres proxy appliqués.",
-      add_proxy_rule: "➕ Ajouter règle proxy",
-      add_direct_rule: "➕ Ajouter règle directe",
-      delete: "❌ Supprimer"
-    },
-    ar: {
-      title: "🌐 إعدادات البروكسي 🔧",
-      language_label: "🌏 اللغة",
-      mode_label: "⚙️ الوضع",
-      mode_proxy_all: "🌍 البروكسي العالمي",
-      mode_direct_all: "🚫 الاتصال المباشر العالمي",
-      mode_rules: "📜 القواعد",
-      proxy_host_label: "🖥️ مضيف البروكسي",
-      proxy_host_placeholder: "مضيف البروكسي (مثال: 1.2.3.4)",
-      proxy_port_label: "🔢 منفذ البروكسي",
-      proxy_port_placeholder: "منفذ البروكسي (مثال: 8080)",
-      proxy_type_label: "🛡️ نوع البروكسي",
-      proxy_list_label: "🔗 قائمة البروكسي",
-      proxy_list_placeholder: "استخدم البروكسي لهذه المجالات",
-      direct_list_label: "🔓 قائمة الاتصال المباشر",
-      direct_list_placeholder: "الاتصال المباشر لهذه المجالات",
-      apply: "🚀 تطبيق",
-      applied: "✅ تم تطبيق إعدادات البروكسي.",
-      add_proxy_rule: "➕ إضافة قاعدة بروكسي",
-      add_direct_rule: "➕ إضافة قاعدة اتصال مباشر",
-      delete: "❌ حذف"
-    }
-  };
+  en: {
+    title: "🌐 Proxy Settings 🔧",
+    language_label: "🌏 Language",
+    mode_label: "⚙️ Mode",
+    mode_proxy_all: "🌍 Global Proxy",
+    mode_direct_all: "🚫 Global Direct",
+    mode_rules: "📜 Rules",
+    proxy_host_label: "🖥️ Proxy Host",
+    proxy_host_placeholder: "Proxy Host (e.g., 1.2.3.4)",
+    proxy_port_label: "🔢 Proxy Port",
+    proxy_port_placeholder: "Proxy Port (e.g., 8080)",
+    proxy_type_label: "🛡️ Proxy Type",
+    proxy_list_label: "🔗 Proxy List",
+    proxy_list_placeholder: "Use proxy for these domains",
+    direct_list_label: "🔓 Direct List",
+    direct_list_placeholder: "Direct connect for these domains",
+    apply: "🚀 Apply",
+    applied: "✅ Proxy settings applied.",
+    add_proxy_rule: "➕ Add Proxy Rule",
+    add_direct_rule: "➕ Add Direct Rule",
+    delete: "❌ Delete",
+    export: "📤 Export",
+    import: "📥 Import"
+  },
+  zh_CN: {
+    title: "🌐 代理设置 🔧",
+    language_label: "🌏 语言",
+    mode_label: "⚙️ 模式",
+    mode_proxy_all: "🌍 全局代理",
+    mode_direct_all: "🚫 全局直连",
+    mode_rules: "📜 规则模式",
+    proxy_host_label: "🖥️ 代理地址",
+    proxy_host_placeholder: "代理地址 (例如 1.2.3.4)",
+    proxy_port_label: "🔢 代理端口",
+    proxy_port_placeholder: "代理端口 (例如 8080)",
+    proxy_type_label: "🛡️ 代理类型",
+    proxy_list_label: "🔗 代理列表",
+    proxy_list_placeholder: "对这些域名使用代理",
+    direct_list_label: "🔓 直连列表",
+    direct_list_placeholder: "对这些域名直连",
+    apply: "🚀 应用",
+    applied: "✅ 代理设置已生效。",
+    add_proxy_rule: "➕ 添加代理规则",
+    add_direct_rule: "➕ 添加直连规则",
+    delete: "❌ 删除",
+    export: "📤 导出",
+    import: "📥 导入"
+  },
+  zh_TW: {
+    title: "🌐 代理設定 🔧",
+    language_label: "🌏 語言",
+    mode_label: "⚙️ 模式",
+    mode_proxy_all: "🌍 全域代理",
+    mode_direct_all: "🚫 全域直連",
+    mode_rules: "📜 規則模式",
+    proxy_host_label: "🖥️ 代理位址",
+    proxy_host_placeholder: "代理位址 (例如 1.2.3.4)",
+    proxy_port_label: "🔢 代理埠號",
+    proxy_port_placeholder: "代理埠號 (例如 8080)",
+    proxy_type_label: "🛡️ 代理類型",
+    proxy_list_label: "🔗 代理列表",
+    proxy_list_placeholder: "對這些域名使用代理",
+    direct_list_label: "🔓 直連列表",
+    direct_list_placeholder: "對這些域名直連",
+    apply: "🚀 套用",
+    applied: "✅ 代理設定已生效。",
+    add_proxy_rule: "➕ 新增代理規則",
+    add_direct_rule: "➕ 新增直連規則",
+    delete: "❌ 刪除",
+    export: "📤 匯出",
+    import: "📥 匯入"
+  },
+  ja: {
+    title: "🌐 プロキシ設定 🔧",
+    language_label: "🌏 言語",
+    mode_label: "⚙️ モード",
+    mode_proxy_all: "🌍 全体プロキシ",
+    mode_direct_all: "🚫 全体直通",
+    mode_rules: "📜 ルールモード",
+    proxy_host_label: "🖥️ プロキシホスト",
+    proxy_host_placeholder: "プロキシホスト (例: 1.2.3.4)",
+    proxy_port_label: "🔢 プロキシポート",
+    proxy_port_placeholder: "プロキシポート (例: 8080)",
+    proxy_type_label: "🛡️ プロキシタイプ",
+    proxy_list_label: "🔗 プロキシリスト",
+    proxy_list_placeholder: "これらのドメインにプロキシを使用",
+    direct_list_label: "🔓 直接接続リスト",
+    direct_list_placeholder: "これらのドメインに直接接続",
+    apply: "🚀 適用",
+    applied: "✅ プロキシ設定を適用しました。",
+    add_proxy_rule: "➕ プロキシルールを追加",
+    add_direct_rule: "➕ 直接接続ルールを追加",
+    delete: "❌ 削除",
+    export: "📤 エクスポート",
+    import: "📥 インポート"
+  },
+  fr: {
+    title: "🌐 Paramètres Proxy 🔧",
+    language_label: "🌏 Langue",
+    mode_label: "⚙️ Mode",
+    mode_proxy_all: "🌍 Proxy Global",
+    mode_direct_all: "🚫 Connexion Directe Globale",
+    mode_rules: "📜 Règles",
+    proxy_host_label: "🖥️ Hôte Proxy",
+    proxy_host_placeholder: "Hôte Proxy (ex: 1.2.3.4)",
+    proxy_port_label: "🔢 Port Proxy",
+    proxy_port_placeholder: "Port Proxy (ex: 8080)",
+    proxy_type_label: "🛡️ Type de Proxy",
+    proxy_list_label: "🔗 Liste Proxy",
+    proxy_list_placeholder: "Utiliser proxy pour ces domaines",
+    direct_list_label: "🔓 Liste Directe",
+    direct_list_placeholder: "Connexion directe pour ces domaines",
+    apply: "🚀 Appliquer",
+    applied: "✅ Paramètres proxy appliqués.",
+    add_proxy_rule: "➕ Ajouter règle proxy",
+    add_direct_rule: "➕ Ajouter règle directe",
+    delete: "❌ Supprimer",
+    export: "📤 Exporter",
+    import: "📥 Importer"
+  },
+  ar: {
+    title: "🌐 إعدادات البروكسي 🔧",
+    language_label: "🌏 اللغة",
+    mode_label: "⚙️ الوضع",
+    mode_proxy_all: "🌍 البروكسي العالمي",
+    mode_direct_all: "🚫 الاتصال المباشر العالمي",
+    mode_rules: "📜 القواعد",
+    proxy_host_label: "🖥️ مضيف البروكسي",
+    proxy_host_placeholder: "مضيف البروكسي (مثال: 1.2.3.4)",
+    proxy_port_label: "🔢 منفذ البروكسي",
+    proxy_port_placeholder: "منفذ البروكسي (مثال: 8080)",
+    proxy_type_label: "🛡️ نوع البروكسي",
+    proxy_list_label: "🔗 قائمة البروكسي",
+    proxy_list_placeholder: "استخدم البروكسي لهذه المجالات",
+    direct_list_label: "🔓 قائمة الاتصال المباشر",
+    direct_list_placeholder: "الاتصال المباشر لهذه المجالات",
+    apply: "🚀 تطبيق",
+    applied: "✅ تم تطبيق إعدادات البروكسي.",
+    add_proxy_rule: "➕ إضافة قاعدة بروكسي",
+    add_direct_rule: "➕ إضافة قاعدة اتصال مباشر",
+    delete: "❌ حذف",
+    export: "📤 تصدير",
+    import: "📥 استيراد"
+  }
+};
+
   
   // Get current language or default to English
   function getCurrentLang() {
@@ -153,16 +166,19 @@ const locales = {
     });
     document.getElementById("addProxyBtn").textContent = dict.add_proxy_rule;
     document.getElementById("addDirectBtn").textContent = dict.add_direct_rule;
+    document.getElementById("exportBtn").textContent = dict.export;
+    document.getElementById("importBtn").textContent = dict.import;
+
   }
   
-  // Fill table with values (proxy or direct list)
+  // Fill table with values
   function fillTable(tableId, values) {
     const tbody = document.querySelector(`#${tableId} tbody`);
     tbody.innerHTML = "";
     values.forEach(value => addRow(tableId, value));
   }
   
-  // Add one editable row with delete button
+  // Add one editable row
   function addRow(tableId, value = "") {
     const tbody = document.querySelector(`#${tableId} tbody`);
     const tr = document.createElement("tr");
@@ -196,7 +212,7 @@ const locales = {
       .filter(v => v.length > 0);
   }
   
-  // Save config to chrome.storage and apply proxy via chrome.proxy API
+  // Save config to chrome.storage and apply proxy
   function applySettings() {
     const language = getCurrentLang();
     const mode = document.getElementById("mode").value;
@@ -208,9 +224,7 @@ const locales = {
   
     const config = { language, mode, proxyType, proxyHost, proxyPort, proxyList, directList };
   
-    // Save config for persistence
     chrome.storage.sync.set({ proxyConfig: config }, () => {
-      // Build PAC script
       let pacScript = "";
   
       if (mode === "direct_all") {
@@ -278,7 +292,7 @@ const locales = {
     });
   }
   
-  // Event handlers
+  // DOM Ready
   document.addEventListener("DOMContentLoaded", () => {
     initialize();
   
@@ -297,6 +311,46 @@ const locales = {
   
     document.getElementById("applyBtn").addEventListener("click", () => {
       applySettings();
+    });
+  
+    // --- Export Config ---
+    document.getElementById("exportBtn").addEventListener("click", () => {
+      chrome.storage.sync.get(["proxyConfig"], ({ proxyConfig }) => {
+        const json = JSON.stringify(proxyConfig, null, 2);
+        const blob = new Blob([json], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "proxy_rules.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    });
+  
+    // --- Import Config ---
+    document.getElementById("importBtn").addEventListener("click", () => {
+      document.getElementById("importFile").click();
+    });
+  
+    document.getElementById("importFile").addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+  
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const config = JSON.parse(event.target.result);
+          chrome.storage.sync.set({ proxyConfig: config }, () => {
+            initialize();
+            alert("✅ Rules imported successfully.");
+          });
+        } catch (err) {
+          alert("❌ Invalid JSON file.");
+        }
+      };
+      reader.readAsText(file);
     });
   });
   
