@@ -8,9 +8,12 @@
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
-      width: 420px;
+      width: 440px;
+      height: 610px;
+      overflow: hidden;
       color: #222;
     }
+
     label {
       display: block;
       margin-top: 12px;
@@ -51,6 +54,7 @@
     .delete-btn {
       background-color: #e74c3c;
       color: white;
+      top: -5px;
       border: none;
       padding: 6px 10px;
       border-radius: 4px;
@@ -75,13 +79,14 @@
   <option value="ja">日本語 🇯🇵</option>
   <option value="fr">Français 🇫🇷</option>
   <option value="ar">العربية 🇸🇦</option>
+  <option value="de">Deutsch 🇩🇪</option>
 </select>
 
 <label for="mode" data-i18n="mode_label">⚙️ Mode</label>
 <select id="mode">
   <option value="proxy_all" data-i18n="mode_proxy_all">🌍 Global Proxy</option>
   <option value="direct_all" data-i18n="mode_direct_all">🚫 Global Direct</option>
-  <option value="rules" data-i18n="mode_rules">📜 Rules</option>
+  <option value="rules" data-i18n="mode_rules">📜 Rules Mode (Regex supported)</option>
 </select>
 
 <label for="proxyType" data-i18n="proxy_type_label">🛡️ Proxy Type</label>
@@ -110,9 +115,9 @@
 </div>
 
 <!-- Import/Export buttons -->
-<button id="exportBtn" type="button">📤 Export</button>
+<button id="exportBtn" type="button" data-i18n="export">📤 Export</button>
 <input type="file" id="importFile" accept=".json" style="display:none;" />
-<button id="importBtn" type="button">📥 Import</button>
+<button id="importBtn" type="button" data-i18n="import">📥 Import</button>
 
 <!-- Apply button -->
 <button id="applyBtn" type="button" data-i18n="apply">🚀 Apply</button>
