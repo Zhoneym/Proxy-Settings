@@ -1,0 +1,13 @@
+{
+  "directList": [
+    "^\\d+\\.\\d+\\.\\d+\\.\\d+$"
+  ],
+  "language": "zh_CN",
+  "mode": "rules",
+  "proxyHost": "127.0.0.1",
+  "proxyList": [
+    ".*"
+  ],
+  "proxyPort": "7890",
+  "proxyType": "http"
+}
