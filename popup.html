@@ -1,67 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Proxy Settings 🌐</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    width: 420px;
-    color: #222;
-  }
-  label {
-    display: block;
-    margin-top: 12px;
-    font-weight: bold;
-  }
-  select, input {
-    width: 100%;
-    padding: 6px;
-    margin-top: 6px;
-    box-sizing: border-box;
-    font-size: 14px;
-  }
-  button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    margin-top: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  button:hover {
-    background-color: #2980b9;
-  }
-  .add-btn {
-    margin-bottom: 10px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 18px;
-  }
-  td {
-    padding: 6px;
-    vertical-align: middle;
-  }
-  .delete-btn {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-left: 8px;
-  }
-  .delete-btn:hover {
-    background-color: #c0392b;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proxy Settings 🌐</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      width: 420px;
+      color: #222;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+    select, input {
+      width: 100%;
+      padding: 6px;
+      margin-top: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      margin-top: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .add-btn {
+      margin-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 18px;
+    }
+    td {
+      padding: 6px;
+      vertical-align: middle;
+    }
+    .delete-btn {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+    .delete-btn:hover {
+      background-color: #c0392b;
+    }
+  </style>
 </head>
 <body>
 
@@ -109,6 +109,12 @@
   <table id="directTable"><tbody></tbody></table>
 </div>
 
+<!-- Import/Export buttons -->
+<button id="exportBtn" type="button">📤 Export</button>
+<input type="file" id="importFile" accept=".json" style="display:none;" />
+<button id="importBtn" type="button">📥 Import</button>
+
+<!-- Apply button -->
 <button id="applyBtn" type="button" data-i18n="apply">🚀 Apply</button>
 
 <script src="popup.js"></script>
