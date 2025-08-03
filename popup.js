@@ -7,6 +7,7 @@ const locales = {
     mode_proxy_all: "🌍 Global Proxy",
     mode_direct_all: "🚫 Global Direct",
     mode_rules: "📜 Rules Mode (Regex supported)",
+    mode_system: "🖥️ System Proxy",
     proxy_host_label: "🖥️ Proxy Host",
     proxy_host_placeholder: "Proxy Host (e.g., 1.2.3.4)",
     proxy_port_label: "🔢 Proxy Port",
@@ -31,6 +32,7 @@ const locales = {
     mode_proxy_all: "🌍 全局代理",
     mode_direct_all: "🚫 全局直连",
     mode_rules: "📜 规则模式（支持正则表达式）",
+    mode_system: "🖥️ 使用系统代理",
     proxy_host_label: "🖥️ 代理地址",
     proxy_host_placeholder: "代理地址 (例如 1.2.3.4)",
     proxy_port_label: "🔢 代理端口",
@@ -55,6 +57,7 @@ const locales = {
     mode_proxy_all: "🌍 全域代理",
     mode_direct_all: "🚫 全域直連",
     mode_rules: "📜 規則模式（支援正則）",
+    mode_system: "🖥️ 使用系統代理",
     proxy_host_label: "🖥️ 代理位址",
     proxy_host_placeholder: "代理位址 (例如 1.2.3.4)",
     proxy_port_label: "🔢 代理埠號",
@@ -79,6 +82,7 @@ const locales = {
     mode_proxy_all: "🌍 全体プロキシ",
     mode_direct_all: "🚫 全体直通",
     mode_rules: "📜 ルールモード（正規表現対応）",
+    mode_system: "🖥️ システムプロキシ",
     proxy_host_label: "🖥️ プロキシホスト",
     proxy_host_placeholder: "プロキシホスト (例: 1.2.3.4)",
     proxy_port_label: "🔢 プロキシポート",
@@ -103,6 +107,7 @@ const locales = {
     mode_proxy_all: "🌍 Globaler Proxy",
     mode_direct_all: "🚫 Global Direkt",
     mode_rules: "📜 Regelmodus (Regex unterstützt)",
+    mode_system: "🖥️ System-Proxy",
     proxy_host_label: "🖥️ Proxy-Host",
     proxy_host_placeholder: "Proxy-Host (z. B. 1.2.3.4)",
     proxy_port_label: "🔢 Proxy-Port",
@@ -127,6 +132,7 @@ const locales = {
     mode_proxy_all: "🌍 Proxy Global",
     mode_direct_all: "🚫 Connexion Directe Globale",
     mode_rules: "📜 Règles (Regex supporté)",
+    mode_system: "🖥️ Proxy Système",
     proxy_host_label: "🖥️ Hôte Proxy",
     proxy_host_placeholder: "Hôte Proxy (ex: 1.2.3.4)",
     proxy_port_label: "🔢 Port Proxy",
@@ -151,6 +157,7 @@ const locales = {
     mode_proxy_all: "🌍 البروكسي العالمي",
     mode_direct_all: "🚫 الاتصال المباشر العالمي",
     mode_rules: "📜 القواعد (يدعم التعبيرات النمطية)",
+    mode_system: "🖥️ البروكسي النظامي",
     proxy_host_label: "🖥️ مضيف البروكسي",
     proxy_host_placeholder: "مضيف البروكسي (مثال: 1.2.3.4)",
     proxy_port_label: "🔢 منفذ البروكسي",
@@ -170,7 +177,6 @@ const locales = {
   }
 };
 
-
 // Get current language or default to English
 function getCurrentLang() {
   const langSelect = document.getElementById("language");
@@ -189,8 +195,6 @@ function updateTablePlaceholders(lang) {
   });
 }
 
-
-// Apply localized texts to the UI
 function applyLocale(lang) {
   const dict = locales[lang] || locales.en;
   document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -205,6 +209,7 @@ function applyLocale(lang) {
   document.getElementById("addDirectBtn").textContent = dict.add_direct_rule;
   document.getElementById("exportBtn").textContent = dict.export;
   document.getElementById("importBtn").textContent = dict.import;
+
   const proxyPlaceholder = dict.proxy_list_placeholder;
   document.querySelectorAll('#proxyTable tbody input').forEach(input => {
     input.placeholder = proxyPlaceholder;
@@ -216,14 +221,12 @@ function applyLocale(lang) {
   });
 }
 
-// Fill table with values
 function fillTable(tableId, values) {
   const tbody = document.querySelector(`#${tableId} tbody`);
   tbody.innerHTML = "";
   values.forEach(value => addRow(tableId, value));
 }
 
-// Add one editable row
 function addRow(tableId, value = "") {
   const tbody = document.querySelector(`#${tableId} tbody`);
   const tr = document.createElement("tr");
@@ -239,7 +242,7 @@ function addRow(tableId, value = "") {
 
   const tdDelete = document.createElement("td");
   const delBtn = document.createElement("button");
-  delBtn.textContent = locales[getCurrentLang()].delete;
+  delBtn.textContent = locales[lang].delete;
   delBtn.className = "delete-btn";
   delBtn.addEventListener("click", () => tr.remove());
   tdDelete.appendChild(delBtn);
@@ -249,7 +252,6 @@ function addRow(tableId, value = "") {
   tbody.appendChild(tr);
 }
 
-// Get all non-empty trimmed input values from a table
 function getTableValues(tableId) {
   const inputs = document.querySelectorAll(`#${tableId} tbody input`);
   return Array.from(inputs)
@@ -257,7 +259,6 @@ function getTableValues(tableId) {
     .filter(v => v.length > 0);
 }
 
-// Save config to chrome.storage and apply proxy
 function applySettings() {
   const language = getCurrentLang();
   const mode = document.getElementById("mode").value;
@@ -271,6 +272,23 @@ function applySettings() {
 
   chrome.storage.sync.set({ proxyConfig: config }, () => {
     let pacScript = "";
+
+    if (mode === "system") {
+      chrome.proxy.settings.set(
+        {
+          value: { mode: "system" },
+          scope: "regular"
+        },
+        () => {
+          if (chrome.runtime.lastError) {
+            alert("❌ " + chrome.runtime.lastError.message);
+          } else {
+            alert(locales[language].applied);
+          }
+        }
+      );
+      return;
+    }
 
     if (mode === "direct_all") {
       pacScript = `function FindProxyForURL(url, host) { return "DIRECT"; }`;
@@ -318,7 +336,6 @@ function FindProxyForURL(url, host) {
   });
 }
 
-// Load saved config and initialize UI
 function initialize() {
   chrome.storage.sync.get(["proxyConfig"], ({ proxyConfig }) => {
     proxyConfig = proxyConfig || {};
@@ -334,16 +351,32 @@ function initialize() {
 
     fillTable("proxyTable", proxyConfig.proxyList || []);
     fillTable("directTable", proxyConfig.directList || []);
+
+    toggleFieldsByMode(proxyConfig.mode || "rules");
   });
 }
 
-// DOM Ready
+function toggleFieldsByMode(mode) {
+  const isCustom = mode !== "system";
+
+  ["proxyType", "proxyHost", "proxyPort", "addProxyBtn", "addDirectBtn"].forEach(id => {
+    document.getElementById(id).disabled = !isCustom;
+  });
+
+  document.querySelector("#proxyTable").style.display = isCustom ? "" : "none";
+  document.querySelector("#directTable").style.display = isCustom ? "" : "none";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initialize();
 
   document.getElementById("language").addEventListener("change", e => {
     const lang = e.target.value;
     applyLocale(lang);
+  });
+
+  document.getElementById("mode").addEventListener("change", e => {
+    toggleFieldsByMode(e.target.value);
   });
 
   document.getElementById("addProxyBtn").addEventListener("click", () => {
@@ -358,7 +391,6 @@ document.addEventListener("DOMContentLoaded", () => {
     applySettings();
   });
 
-  // Export Config
   document.getElementById("exportBtn").addEventListener("click", () => {
     chrome.storage.sync.get(["proxyConfig"], ({ proxyConfig }) => {
       const json = JSON.stringify(proxyConfig, null, 2);
@@ -374,7 +406,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Import Config
   document.getElementById("importBtn").addEventListener("click", () => {
     document.getElementById("importFile").click();
   });

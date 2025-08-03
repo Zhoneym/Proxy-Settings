@@ -10,10 +10,9 @@
       margin: 20px;
       width: 440px;
       height: 610px;
-      overflow: hidden;
+      overflow-y: auto;
       color: #222;
     }
-
     label {
       display: block;
       margin-top: 12px;
@@ -54,7 +53,6 @@
     .delete-btn {
       background-color: #e74c3c;
       color: white;
-      top: -5px;
       border: none;
       padding: 6px 10px;
       border-radius: 4px;
@@ -87,6 +85,7 @@
   <option value="proxy_all" data-i18n="mode_proxy_all">🌍 Global Proxy</option>
   <option value="direct_all" data-i18n="mode_direct_all">🚫 Global Direct</option>
   <option value="rules" data-i18n="mode_rules">📜 Rules Mode (Regex supported)</option>
+  <option value="system" data-i18n="mode_system">🖥️ Use System Proxy</option>
 </select>
 
 <label for="proxyType" data-i18n="proxy_type_label">🛡️ Proxy Type</label>
@@ -114,12 +113,10 @@
   <table id="directTable"><tbody></tbody></table>
 </div>
 
-<!-- Import/Export buttons -->
 <button id="exportBtn" type="button" data-i18n="export">📤 Export</button>
 <input type="file" id="importFile" accept=".json" style="display:none;" />
 <button id="importBtn" type="button" data-i18n="import">📥 Import</button>
 
-<!-- Apply button -->
 <button id="applyBtn" type="button" data-i18n="apply">🚀 Apply</button>
 
 <script src="popup.js"></script>
